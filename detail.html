@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head as index.html -->
+    <title>Product Name - Elegance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Same header as index.html -->
+
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="images/products/men/denim-jacket.jpg" alt="Premium Denim Jacket" id="main-image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="images/products/men/denim-jacket.jpg" alt="Thumbnail 1" class="thumbnail active">
+                        <img src="images/products/men/denim-jacket-2.jpg" alt="Thumbnail 2" class="thumbnail">
+                        <img src="images/products/men/denim-jacket-3.jpg" alt="Thumbnail 3" class="thumbnail">
+                        <img src="images/products/men/denim-jacket-4.jpg" alt="Thumbnail 4" class="thumbnail">
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1>Premium Denim Jacket</h1>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="#reviews" class="review-count">24 reviews</a>
+                        </div>
+                        <div class="product-sku">SKU: DJ-2023-BLK</div>
+                    </div>
+                    
+                    <div class="product-price">$89.99</div>
+                    
+                    <div class="product-description">
+                        <p>This premium denim jacket is crafted from high-quality cotton denim with a comfortable fit. Features include:</p>
+                        <ul>
+                            <li>100% Cotton denim</li>
+                            <li>Classic fit</li>
+                            <li>Front button closure</li>
+                            <li>Two chest pockets</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-options">
+                        <div class="option">
+                            <label>Color:</label>
+                            <div class="color-options">
+                                <button class="color-option active" data-color="black" style="background-color: #000000;"></button>
+                                <button class="color-option" data-color="blue" style="background-color: #1a237e;"></button>
+                                <button class="color-option" data-color="gray" style="background-color: #616161;"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="option">
+                            <label>Size:</label>
+                            <div class="size-options">
+                                <button class="size-option">S</button>
+                                <button class="size-option active">M</button>
+                                <button class="size-option">L</button>
+                                <button class="size-option">XL</button>
+                                <button class="size-option">XXL</button>
+                            </div>
+                            <a href="#" class="size-guide">Size Guide</a>
+                        </div>
+                        
+                        <div class="option">
+                            <label>Quantity:</label>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <button class="btn btn-wishlist"><i class="far fa-heart"></i> Add to Wishlist</button>
+                    </div>
+                    
+                    <div class="product-meta-footer">
+                        <div class="meta-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $50</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Easy returns within 30 days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="details">Details</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    <button class="tab-btn" data-tab="shipping">Shipping</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="description">
+                        <h3>Product Description</h3>
+                        <p>Our premium denim jacket is a timeless wardrobe essential. Made from 100% high-quality cotton denim, this jacket offers both style and durability. The classic fit ensures comfort while the front button closure and two chest pockets add functionality.</p>
+                        <p>The jacket features reinforced stitching for longevity and is machine washable for easy care. Available in multiple colors to suit your personal style.</p>
+                    </div>
+                    
+                    <div class="tab-pane" id="details">
+                        <h3>Product Details</h3>
+                        <table>
+                            <tr>
+                                <th>Material</th>
+                                <td>100% Cotton Denim</td>
+                            </tr>
+                            <tr>
+                                <th>Fit</th>
+                                <td>Classic</td>
+                            </tr>
+                            <tr>
+                                <th>Closure</th>
+                                <td>Button Front</td>
+                            </tr>
+                            <tr>
+                                <th>Pockets</th>
+                                <td>2 Chest Pockets</td>
+                            </tr>
+                            <tr>
+                                <th>Care Instructions</th>
+                                <td>Machine Wash Cold, Tumble Dry Low</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="tab-pane" id="reviews">
+                        <h3>Customer Reviews</h3>
+                        <div class="review-summary">
+                            <div class="average-rating">
+                                <div class="average">4.5</div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="total-reviews">Based on 24 reviews</div>
+                            </div>
+                            <div class="rating-bars">
+                                <!-- Rating bars would go here -->
+                            </div>
+                        </div>
+                        
+                        <div class="review-list">
+                            <!-- Reviews would be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="shipping">
+                        <h3>Shipping Information</h3>
+                        <p>We offer worldwide shipping. Most orders are processed within 1-2 business days and shipped via standard shipping which typically takes 3-5 business days for domestic orders and 7-14 business days for international orders.</p>
+                        <p>Free shipping is available for orders over $50. Expedited shipping options are available at checkout.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="product-grid">
+                    <!-- Related products would be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same footer as index.html -->
+
+    <script src="js/product.js"></script>
+</body>
+</html>

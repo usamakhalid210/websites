@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Booker | Elegance Fashion</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (same as other pages) -->
+    <header class="header">
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Order Booker Main Content -->
+    <main class="order-booker-container">
+        <!-- Order Progress Tracker -->
+        <section class="order-progress">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="step-label">Cart</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Order Content -->
+        <div class="order-content">
+            <!-- Cart Section -->
+            <section class="order-section active" id="cart-section">
+                <h2>Your Shopping Cart</h2>
+                <div class="cart-items">
+                    <!-- Cart items will be loaded here -->
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <a href="/index.html" class="btn">Continue Shopping</a>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal (0 items)</span>
+                            <span class="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="shipping">Calculated at next step</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span class="tax">Calculated at next step</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Estimated Total</span>
+                            <span class="total">$0.00</span>
+                        </div>
+                        <button class="btn checkout-btn" disabled>Proceed to Shipping</button>
+                        <div class="payment-methods">
+                            <img src="images/payment-methods.png" alt="Accepted payment methods">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shipping Section -->
+            <section class="order-section" id="shipping-section">
+                <h2>Shipping Information</h2>
+                <div class="shipping-options">
+                    <div class="shipping-form">
+                        <form id="shippingForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Address <span class="required">*</span></label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City <span class="required">*</span></label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode">ZIP Code <span class="required">*</span></label>
+                                    <input type="text" id="zipCode" name="zipCode" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <!-- More countries -->
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="saveAddress" name="saveAddress">
+                                <label for="saveAddress">Save this address for future orders</label>
+                            </div>
+                            
+                            <div class="shipping-methods">
+                                <h3>Shipping Method</h3>
+                                <div class="method-option">
+                                    <input type="radio" id="standardShipping" name="shippingMethod" value="standard" checked>
+                                    <label for="standardShipping">
+                                        <span class="method-name">Standard Shipping</span>
+                                        <span class="method-details">3-5 business days</span>
+                                        <span class="method-price">$5.99</span>
+                                    </label>
+                                </div>
+                                <div class="method-option">
+                                    <input type="radio" id="expressShipping" name="shippingMethod" value="express">
+                                    <label for="expressShipping">
+                                        <span class="method-name">Express Shipping</span>
+                                        <span class="method-details">1-2 business days</span>
+                                        <span class="method-price">$12.99</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="order-review">
+                        <h3>Your Order</h3>
+                        <div class="review-items">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        <div class="review-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal">$0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Shipping</span>
+                                <span class="shipping">$5.99</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Tax</span>
+                                <span class="tax">$0.00</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>Total</span>
+                                <span class="total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline back-to-cart">Back to Cart</button>
+                    <button class="btn proceed-to-payment">Proceed to Payment</button>
+                </div>
+            </section>
+
+            <!-- Payment Section -->
+            <section class="order-section" id="payment-section">
+                <h2>Payment Method</h2>
+                <div class="payment-options">
+                    <div class="payment-methods">
+                        <div class="payment-tabs">
+                            <button class="tab-btn active" data-tab="credit-card">Credit Card</button>
+                            <button class="tab-btn" data-tab="paypal">PayPal</button>
+                            <button class="tab-btn" data-tab="apple-pay">Apple Pay</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="credit-card">
+                            <form id="paymentForm">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number <span class="required">*</span></label>
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date <span class="required">*</span></label>
+                                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV <span class="required">*</span></label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card <span class="required">*</span></label>
+                                    <input type="text" id="cardName" name="cardName" required>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="saveCard" name="saveCard">
+                                    <label for="saveCard">Save this card for future purchases</label>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-content" id="paypal">
+                            <div class="paypal-content">
+                                <p>You'll be redirected to PayPal to complete your purchase securely.</p>
+                                <button class="btn paypal-btn">
+                                    <i class="fab fa-paypal"></i> Continue with PayPal
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="apple-pay">
+                            <div class="apple-pay-content">
+                                <p>Complete your purchase quickly and securely with Apple Pay.</p>
+                                <button class="btn apple-pay-btn">
+                                    <i class="fab fa-apple"></i> Pay with Apple Pay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        <div class="summary-shipping">
+                            <h4>Shipping Address</h4>
+                            <div class="address-details">
+                                <!-- Address will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="summary-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal">$0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Shipping</span>
+                                <span class="shipping">$5.99</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Tax</span>
+                                <span class="tax">$0.00</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>Total</span>
+                                <span class="total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline back-to-shipping">Back to Shipping</button>
+                    <button class="btn place-order">Place Order</button>
+                </div>
+            </section>
+
+            <!-- Confirmation Section -->
+            <section class="order-section" id="confirmation-section">
+                <div class="confirmation-card">
+                    <div class="confirmation-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Order Confirmed!</h2>
+                        <p>Thank you for your purchase</p>
+                    </div>
+                    
+                    <div class="confirmation-details">
+                        <div class="detail-row">
+                            <span>Order Number</span>
+                            <strong>#ORD-2023-12345</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Date</span>
+                            <strong>October 15, 2023</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Total</span>
+                            <strong>$129.98</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Payment Method</span>
+                            <strong>VISA ending in 4242</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-shipping">
+                        <h3>Shipping Information</h3>
+                        <div class="shipping-address">
+                            <!-- Shipping address will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-items">
+                        <h3>Your Order</h3>
+                        <div class="ordered-items">
+                            <!-- Ordered items will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="/index.html" class="btn">Continue Shopping</a>
+                        <a href="order-tracking.html" class="btn btn-outline">Track Your Order</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (same as other pages) -->
+    <footer class="footer">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>

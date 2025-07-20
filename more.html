@@ -1,0 +1,60 @@
+<!-- Example men.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head as index.html -->
+    <title>Men's Collection - Elegance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Same header as index.html -->
+
+    <section class="category-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Men's Collection</h1>
+                <p>Premium fashion for men</p>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select id="sort-by">
+                        <option value="popular">Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Filter By:</label>
+                    <select id="filter-category">
+                        <option value="all">All Categories</option>
+                        <option value="shirts">Shirts</option>
+                        <option value="pants">Pants</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Price Range:</label>
+                    <div class="price-range">
+                        <input type="range" min="0" max="500" value="500" id="price-slider">
+                        <span id="price-value">Up to $500</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Same footer as index.html -->
+
+    <script src="more.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard | Elegance Fashion</title>
+    <link rel="stylesheet" href="sale.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Date Range Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+</head>
+<body>
+    <!-- Header (same as other pages) -->
+    <header class="header">
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Sales Dashboard Main Content -->
+    <main class="sales-dashboard">
+        <div class="dashboard-header">
+            <h1>Sales Analytics Dashboard</h1>
+            <div class="dashboard-controls">
+                <div class="date-range-picker">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="dateRange">Last 30 Days</span>
+                    <input type="text" id="dateRangeInput">
+                </div>
+                <div class="view-selector">
+                    <select id="viewType">
+                        <option value="overview">Overview</option>
+                        <option value="byCategory">By Category</option>
+                        <option value="byProduct">By Product</option>
+                        <option value="byRegion">By Region</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <section class="key-metrics">
+            <div class="metric-card">
+                <div class="metric-value">$24,589</div>
+                <div class="metric-label">Total Revenue</div>
+                <div class="metric-change positive">
+                    <i class="fas fa-arrow-up"></i> 12.5% vs last period
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">1,248</div>
+                <div class="metric-label">Total Orders</div>
+                <div class="metric-change positive">
+                    <i class="fas fa-arrow-up"></i> 8.3% vs last period
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">$78.45</div>
+                <div class="metric-label">Average Order Value</div>
+                <div class="metric-change negative">
+                    <i class="fas fa-arrow-down"></i> 2.1% vs last period
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">4.8%</div>
+                <div class="metric-label">Conversion Rate</div>
+                <div class="metric-change positive">
+                    <i class="fas fa-arrow-up"></i> 0.7% vs last period
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Charts -->
+        <section class="chart-row">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Revenue Trend</h2>
+                    <div class="chart-actions">
+                        <button class="chart-action-btn active" data-period="daily">Daily</button>
+                        <button class="chart-action-btn" data-period="weekly">Weekly</button>
+                        <button class="chart-action-btn" data-period="monthly">Monthly</button>
+                    </div>
+                </div>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </section>
+
+        <section class="chart-row">
+            <div class="chart-container half-width">
+                <div class="chart-header">
+                    <h2>Sales by Category</h2>
+                </div>
+                <canvas id="categoryChart"></canvas>
+            </div>
+            <div class="chart-container half-width">
+                <div class="chart-header">
+                    <h2>Top Selling Products</h2>
+                    <div class="chart-actions">
+                        <button class="chart-action-btn active" data-metric="revenue">Revenue</button>
+                        <button class="chart-action-btn" data-metric="units">Units Sold</button>
+                    </div>
+                </div>
+                <canvas id="productsChart"></canvas>
+            </div>
+        </section>
+
+        <section class="chart-row">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Regional Performance</h2>
+                    <div class="chart-actions">
+                        <button class="chart-action-btn active" data-region="all">All Regions</button>
+                        <button class="chart-action-btn" data-region="north">North</button>
+                        <button class="chart-action-btn" data-region="south">South</button>
+                        <button class="chart-action-btn" data-region="east">East</button>
+                        <button class="chart-action-btn" data-region="west">West</button>
+                    </div>
+                </div>
+                <canvas id="regionChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="data-table-section">
+            <div class="section-header">
+                <h2>Detailed Sales Data</h2>
+                <button class="export-btn">
+                    <i class="fas fa-download"></i> Export CSV
+                </button>
+            </div>
+            <div class="table-container">
+                <table id="salesDataTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Order ID</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Region</th>
+                            <th>Revenue</th>
+                            <th>Units</th>
+                            <th>Customer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be loaded via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="prevPage">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="pagination-btn" id="nextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="rows-per-page">
+                    <span>Rows per page:</span>
+                    <select id="rowsPerPage">
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as other pages) -->
+    <footer class="footer">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="sale.js"></script>
+</body>
+</html>
